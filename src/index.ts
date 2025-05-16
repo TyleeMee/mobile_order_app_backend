@@ -18,7 +18,7 @@ dotenv.config();
 
 // Expressアプリケーションの初期化
 const app = express();
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5000;
 
 // ミドルウェアの設定
 app.use(cors());

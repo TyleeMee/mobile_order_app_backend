@@ -1,5 +1,5 @@
+import { getShop } from "../services/shopService";
 import { Request, Response } from "express";
-import { fetchShop } from "../repositories/shopRepository";
 
 // ショップの取得
 export const getShopHandler = async (req: Request, res: Response) => {
@@ -9,7 +9,7 @@ export const getShopHandler = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "オーナーIDが必要です" });
     }
 
-    const shop = await fetchShop(ownerId);
+    const shop = await getShop(ownerId);
 
     if (!shop) {
       return res.status(404).json({ message: "店舗情報が見つかりません" });
